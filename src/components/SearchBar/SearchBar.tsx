@@ -7,7 +7,7 @@ interface SearchBarProps {
 const SearchBar = ({ onSubmit }: SearchBarProps) => {
   const handleSearch = (formData: FormData) => {
     const querry = formData.get("query") as string;
-    if (!querry) {
+    if (!querry.trim()) {
       toast.error("Please enter your search querry", {
         position: "top-center",
       });
